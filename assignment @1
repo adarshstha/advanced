@@ -1,0 +1,160 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication2;
+
+/**
+ *
+ * @author sita
+ */
+import java.io.*;
+
+public class JavaApplication2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+        throws IOException
+    {
+         BufferedReader br = new BufferedReader ( new InputStreamReader ( System.in ) );
+
+                System.out.print("\n\nEnter no. of students : ");
+
+                int n = Integer.parseInt ( br.readLine() );
+
+                String name[] = new String[n];
+
+                String div[] = new String[n];
+
+                int sub[][] = new int[n][7];
+
+                int total[] = new int [n];
+
+                float per[] = new float[n];
+
+                for ( int i=0 ; i<n ; i++ )
+
+                {
+
+                        System.out.println("\n\nEnter details of Student " + (i+1) + " -\n");
+
+                        System.out.print("\nEnter name : ");
+
+                        name[i] = br.readLine();
+
+                        System.out.println("\n\nEnter marks in 6 subjects -\n");
+
+                        System.out.print("\nSE  =  ");
+
+                        sub[i][0] = Integer.parseInt ( br.readLine() );
+
+                        System.out.print("\nCA  =  ");
+
+                        sub[i][1] = Integer.parseInt ( br.readLine() );
+                                                  
+                        System.out.print("\nDMS =  ");
+
+                        sub[i][2] = Integer.parseInt ( br.readLine() );
+
+                        System.out.print("\nCG  =  ");
+
+                        sub[i][3] = Integer.parseInt ( br.readLine() );
+
+                        System.out.print("\nTF  =  ");
+
+                        sub[i][4] = Integer.parseInt ( br.readLine() );
+
+                        System.out.print("\nITC =  ");
+
+                        sub[i][5] = Integer.parseInt ( br.readLine() );
+
+                        for ( int j=0 ; j<6 ; j++ )
+
+                                total[i] += sub[i][j];
+
+                        per[i] = (float)total[i]/6;
+
+                        if ( per[i] >= 70 && per[i] < 100 )
+                            
+                                div[i] = "distinction";
+
+                        else if ( per[i] >= 60 && per[i] < 70 )
+
+                                div[i] = "1st";
+
+                        else if ( per[i] >= 45 && per[i] < 60 )
+
+                                div[i] = "2nd";
+
+                        else if ( per[i] >= 33 && per[i] < 45 )
+
+                                div[i] = "3rd";
+                        else
+
+                                div[i] = "Fail";
+
+                }
+                
+
+                System.out.print("\n\nName\t\t");
+                
+
+                System.out.print(" English\t\t");
+                
+
+                System.out.print("O .Mathematics\t\t");
+                
+
+                System.out.print("C. Mathematics\t\t");
+                
+                System.out.print("Nepali\t\t");
+                
+
+                System.out.print("Social studies\t\t");
+                
+
+                System.out.print("Science\t\t");
+               
+                               
+                System.out.print("Total\t\t");
+                
+
+                System.out.print("%\t\t");
+
+                System.out.println("Div\n\n");
+
+                for ( int i=0 ; i<n ; i++ )
+
+                {
+
+                        System.out.print(name[i] + "\t");
+
+                        System.out.print(sub[i][0] + "\t");
+
+                        System.out.print(sub[i][1] + "\t");
+
+                        System.out.print(sub[i][2] + "\t");                       
+
+                        System.out.print(sub[i][3] + "\t");                       
+
+                        System.out.print(sub[i][4] + "\t");
+
+                        System.out.print(sub[i][5] + "\t");
+
+                        System.out.print(total[i] + "\t");
+
+                        System.out.print(per[i] + "\t");
+
+                        System.out.print(div[i] + "\t");
+
+                        System.out.println("\n");
+
+                }
+
+        }
+
+}
