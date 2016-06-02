@@ -133,7 +133,7 @@ public class JavaApplication2 {
 
                         System.out.print(name[i] + "\t");
 
-                        System.out.print(sub[i][0] + "\t");
+                        System.out.print(english [i][0] + "\t");
 
                         System.out.print(sub[i][1] + "\t");
 
